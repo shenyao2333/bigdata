@@ -1,0 +1,6 @@
+hello word
+hello Java
+hello js
+hello vue
+how are you
+you want to do
