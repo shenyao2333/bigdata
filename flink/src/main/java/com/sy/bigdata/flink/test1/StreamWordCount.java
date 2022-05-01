@@ -22,7 +22,8 @@ public class StreamWordCount {
         DataStreamSource<String> dataStreamSource = env.readTextFile("E:\\item\\bigdata\\flink\\src\\main\\resources\\document.txt");
 
         //转化计算
-        SingleOutputStreamOperator<Tuple2<String, Long>> tuple = dataStreamSource.flatMap(new WordCountFlatMap());
+        SingleOutputStreamOperator<Tuple2<String, Long>> tuple = dataStreamSource
+                .flatMap(new WordCountFlatMap());
 
        // 分组
         KeyedStream<Tuple2<String, Long>, String> tuple2StringKeyedStream =
