@@ -17,18 +17,15 @@ public class NcStreamWordCount {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
-        DataStreamSource<String> streamSource = env.socketTextStream("123.56.97.130", 8889);
+        DataStreamSource<String> streamSource = env.socketTextStream("192.168.222.140", 8889);
 
         SingleOutputStreamOperator<Tuple2<String, Long>> flatMap = streamSource.flatMap(new LetterCountFlatMap());
 
         KeyedStream<Tuple2<String, Long>, String> tuple2StringKeyedStream = flatMap.keyBy(item -> item.f0);
-
-
         SingleOutputStreamOperator<Tuple2<String, Long>> sum = tuple2StringKeyedStream.sum(1);
 
+
         sum.print();
-
-
         env.execute();
 
 
