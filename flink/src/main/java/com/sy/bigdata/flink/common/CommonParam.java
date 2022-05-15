@@ -23,11 +23,12 @@ public class CommonParam {
 
         return env.fromElements(
                 new User("小明","home",new Date(2342342)),
+                new User("小红","index",new Date(344202313)),
+                new User("小红","goods",new Date(344242343)),
                 new User("小红","cart",new Date(23421143)),
                 new User("老王","index",new Date(2342343)),
                 new User("老王","home",new Date(24545343)),
                 new User("小明","cart",new Date(334564243)),
-                new User("小红","cart",new Date(344242343)),
                 new User("老王","goods",new Date(345534234))
         );
 

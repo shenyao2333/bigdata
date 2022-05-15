@@ -2,6 +2,7 @@ package com.sy.bigdata.flink.common;
 
 import lombok.Data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -26,5 +27,15 @@ public class User {
         this.name = name;
         this.url = url;
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return "User{" +
+                "name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", time=" + simpleDateFormat.format(time) +
+                '}';
     }
 }
