@@ -20,7 +20,7 @@ public class RichFunctionTest {
 
         DataStreamSource<User> env = CommonParam.getEnv();
 
-        env.map(new MyRichMapper()).setParallelism(4).print();
+        env.map(new MyRichMapper()).setParallelism(4    ).print();
 
         env.getExecutionEnvironment().execute();
     }

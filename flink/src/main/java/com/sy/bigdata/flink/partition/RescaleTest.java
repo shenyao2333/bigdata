@@ -7,9 +7,10 @@ import scala.Int;
 /**
  * @Author: sy
  * @Date: Created by 2022.5.15-19:26
- * @description:
+ * @description: 重缩放分区 。 意味着某个状态节点发生了并发的缩扩，
+ * 状态的数据分布将发生变化，因此存在一个reshuffle的过程
  */
-public class Test2 {
+public class RescaleTest {
 
     public static void main(String[] args) throws Exception {
 
@@ -31,9 +32,10 @@ public class Test2 {
             public void cancel() {
 
             }
-        }).setParallelism(2).rescale()
-        .print().setParallelism(4)
-        ;
+            //源设置为两个并行任务，
+        }).setParallelism(2)
+                // 这里分配打印操作前设置了重缩放分区，四个并行任务，意味着将两个任务分为四个
+                .rescale().print().setParallelism(4);
 
         env.execute();
     }

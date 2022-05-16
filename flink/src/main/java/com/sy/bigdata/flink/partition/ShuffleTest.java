@@ -11,7 +11,7 @@ import java.util.Date;
  * @Date: Created by 2022.5.15-12:58
  * @description:
  */
-public class Test {
+public class ShuffleTest {
 
 
     public static void main(String[] args) throws Exception {
