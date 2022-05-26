@@ -31,7 +31,7 @@ public class User {
 
     @Override
     public String toString() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         return "User{" +
                 "name='" + name + '\'' +
                 ", url='" + url + '\'' +

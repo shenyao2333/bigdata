@@ -35,7 +35,7 @@ public class WindowTest {
                 .keyBy( user -> user.getName())
 
                 .window(TumblingEventTimeWindows.of(Time.seconds(10)))  //滚动时间窗口
-                //.window(SlidingEventTimeWindows.of(Time.hours(1),Time.minutes(10))) // 滑动事件，1个小时 滑动距离
+                //.window(SlidingEventTimeWindows.of(Time.hours(1),Time.minutes(10))) // 滑动事件，1个小时 滑动距离10分钟
                 //.window(EventTimeSessionWindows.withGap(Time.seconds(10)))  //事件时间会话窗口
                // .countWindow(10,2) // 滑动计数窗口
                 .reduce( (s1,s2) -> {
