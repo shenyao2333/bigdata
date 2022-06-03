@@ -18,7 +18,7 @@ import java.util.HashSet;
 /**
  * @Author: sy
  * @Date: Created by 2022.5.25-22:40
- * @description: 计算pv  和uv   pv： 访问数，  uv：用户数
+ * @description: 增量计算pv  和uv   pv： 访问数，  uv：用户数
  */
 public class WindowsPvUv {
 

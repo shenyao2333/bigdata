@@ -22,7 +22,7 @@ import java.util.HashSet;
 /**
  * @Author: sy
  * @Date: Created by 2022.5.26-23:05
- * @description: 这里是增量聚合 +  窗口信息
+ * @description: 这里是增量聚合 +  窗口信息； 最常见的用法
  */
 public class UcCountExample {
 

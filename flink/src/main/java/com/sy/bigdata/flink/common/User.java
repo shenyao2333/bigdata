@@ -29,6 +29,12 @@ public class User {
         this.time = time;
     }
 
+    public User(String name, String url, Long time) {
+        this.name = name;
+        this.url = url;
+        this.time = new Date(time);
+    }
+
     @Override
     public String toString() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
