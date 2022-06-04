@@ -21,15 +21,14 @@ public class CustomSource  implements SourceFunction<User> {
     public void run(SourceContext<User> sourceContext) throws Exception {
 
 
-        String[] url = {"/home","/index","/cart","/goods","/user"};
-        String[] name = {"李华","小红","田七","王五","张三"};
+        String[] url = {"/home","/index","/cart","/goods","/user","/article"};
+        String[] name = {"李华","小红","田七","王五","张三","小一"};
 
         Random random = new Random();
-        int i = 0;
         //生成数据
         while (running){
-            Thread.sleep(random.nextInt(5)* 700L);
-            sourceContext.collect(new User( name[random.nextInt(5)], url[random.nextInt(5)],  new Date()));
+            Thread.sleep(random.nextInt(3)* 700L);
+            sourceContext.collect(new User( name[random.nextInt(6)], url[random.nextInt(6)],  new Date()));
         }
     }
 
