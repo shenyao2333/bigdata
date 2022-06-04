@@ -13,11 +13,19 @@ public class UrlViewCount {
     public Integer count;
 
 
-    private String url;
+    public String url;
 
     public Long endTime;
 
     public Long startTime;
 
+    public UrlViewCount(String url, Integer count ,Long startTime ,  Long endTime ) {
+        this.count = count;
+        this.url = url;
+        this.endTime = endTime;
+        this.startTime = startTime;
+    }
 
+    public UrlViewCount() {
+    }
 }
