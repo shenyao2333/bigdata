@@ -27,7 +27,7 @@ public class CustomSource  implements SourceFunction<User> {
         Random random = new Random();
         //生成数据
         while (running){
-            Thread.sleep(random.nextInt(5)* 1000L);
+            Thread.sleep(random.nextInt(3)* 1000L);
             sourceContext.collect(new User( name[random.nextInt(6)], url[random.nextInt(6)],  new Date()));
         }
     }

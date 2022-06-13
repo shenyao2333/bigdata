@@ -40,7 +40,7 @@ public class EventTimeTimerTest {
                                  collector.collect("水位线"+ context.timerService().currentWatermark());
                                  if ("张三".equals(context.getCurrentKey())){
                                      //注册一个定时器
-                                     context.timerService().registerProcessingTimeTimer(time+10000);
+                                     context.timerService().registerEventTimeTimer(time+10000);
                                      collector.collect("添加一个定时器");
                                  }
 

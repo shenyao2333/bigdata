@@ -1,9 +1,13 @@
 package com.sy.bigdata.flink.common;
 
 import lombok.SneakyThrows;
+import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -32,6 +36,21 @@ public class CommonParam {
                 new User("老王","goods",new Date(345534234))
         );
 
+    }
+
+
+    @SneakyThrows
+    public static  SingleOutputStreamOperator<User> getCustomEnv(){
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        env.setParallelism(1);
+
+        DataStreamSource<User> userDataStreamSource = env.addSource(new CustomSource());
+
+        SingleOutputStreamOperator<User> userSingleOutputStreamOperator = userDataStreamSource.assignTimestampsAndWatermarks(
+                WatermarkStrategy.<User>forBoundedOutOfOrderness(Duration.ZERO)
+                        .withTimestampAssigner((user, l) -> user.time.getTime()));
+
+        return  userSingleOutputStreamOperator;
     }
 
 
