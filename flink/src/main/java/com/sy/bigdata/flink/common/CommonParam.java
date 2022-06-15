@@ -33,7 +33,8 @@ public class CommonParam {
                 new User("老王","index",new Date(2342343)),
                 new User("老王","home",new Date(24545343)),
                 new User("小明","cart",new Date(334564243)),
-                new User("老王","goods",new Date(345534234))
+                new User("老王","goods",new Date(345534234)),
+                new User("老王","pay",new Date(345534234))
         );
 
     }
